@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "EksamenF22re",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "EksamenF22re::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-EksamenF22re-Debug-ec9c86742a93923e01ab.json",
+					"name" : "EksamenF22re",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/esbeninglev/Dropbox/Documents/Uni/3_semester/DAO_Datastrukturer_og_Algoritmer/Eksamen/Kode/EksamenF22re/cmake-build-debug",
+		"source" : "/Users/esbeninglev/Dropbox/Documents/Uni/3_semester/DAO_Datastrukturer_og_Algoritmer/Eksamen/Kode/EksamenF22re"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

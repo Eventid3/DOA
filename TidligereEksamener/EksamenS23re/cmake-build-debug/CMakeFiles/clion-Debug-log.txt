@@ -1,0 +1,4 @@
+/Users/esbeninglev/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/esbeninglev/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/esbeninglev/Dropbox/Documents/Uni/3_semester/DAO_Datastrukturer_og_Algoritmer/Eksamen/Kode/EksamenS23re -B /Users/esbeninglev/Dropbox/Documents/Uni/3_semester/DAO_Datastrukturer_og_Algoritmer/Eksamen/Kode/EksamenS23re/cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/esbeninglev/Dropbox/Documents/Uni/3_semester/DAO_Datastrukturer_og_Algoritmer/Eksamen/Kode/EksamenS23re/cmake-build-debug

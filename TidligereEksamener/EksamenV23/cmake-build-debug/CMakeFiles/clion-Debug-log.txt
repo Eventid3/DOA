@@ -1,0 +1,16 @@
+/Users/esbeninglev/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/esbeninglev/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/esbeninglev/Dropbox/Documents/Uni/3_semester/DAO_Datastrukturer_og_Algoritmer/Eksamen/Kode/EksamenV23 -B /Users/esbeninglev/Dropbox/Documents/Uni/3_semester/DAO_Datastrukturer_og_Algoritmer/Eksamen/Kode/EksamenV23/cmake-build-debug
+-- The C compiler identification is AppleClang 14.0.0.14000029
+-- The CXX compiler identification is AppleClang 14.0.0.14000029
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/esbeninglev/Dropbox/Documents/Uni/3_semester/DAO_Datastrukturer_og_Algoritmer/Eksamen/Kode/EksamenV23/cmake-build-debug

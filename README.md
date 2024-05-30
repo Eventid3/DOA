@@ -1,4 +1,10 @@
 # DOA NOTES
+
+Noter til faget Algoritmer og Datastrukturer, 3. Semester, Aarhus Universitet.
+Herunder er de vigtigste informationer om forskellige datastrukturer, tree strukturer, sorteringsalgoritmer, graph seach osv. nævnt. I mappen 'LectureCode' findes alt kode fra forelæsningerne. Under 'TidligereEksamener' ligger kode fra de tidligere eksamenssæt. Alle slides fra lektionerne er også samlet (tak Mads V!).
+
+Brug dette repo med omtanke. Der tages forbehold for eventuelle fejl og mangler der måtte være. 
+
 ## DATA TYPES
 
 ### 1. Linked Lists
