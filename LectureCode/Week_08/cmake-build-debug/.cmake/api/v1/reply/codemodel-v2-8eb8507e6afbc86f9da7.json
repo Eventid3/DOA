@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Week08",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Week08_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Week08_lib-Debug-f026812d9a95c93e5874.json",
+					"name" : "Week08_lib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/esbeninglev/Dropbox/Programming/Uni/DOA_AlgoritmerOgDatastrukturer/LectureCode/Week_08/cmake-build-debug",
+		"source" : "/Users/esbeninglev/Dropbox/Programming/Uni/DOA_AlgoritmerOgDatastrukturer/LectureCode/Week_08"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

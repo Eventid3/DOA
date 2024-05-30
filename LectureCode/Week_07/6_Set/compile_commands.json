@@ -1,0 +1,15 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-c",
+      "-o",
+      "test_set.o",
+      "test_set.cpp"
+    ],
+    "directory": "/mnt/c/svn/BSc/ALGDST/F23(BEng)/Exercises/Week_07-08/6_Set",
+    "file": "/mnt/c/svn/BSc/ALGDST/F23(BEng)/Exercises/Week_07-08/6_Set/test_set.cpp",
+    "output": "/mnt/c/svn/BSc/ALGDST/F23(BEng)/Exercises/Week_07-08/6_Set/test_set.o"
+  }
+]
