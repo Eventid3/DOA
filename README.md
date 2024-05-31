@@ -5,6 +5,189 @@ Herunder er de vigtigste informationer om forskellige datastrukturer, tree struk
 
 Brug dette repo med omtanke. Der tages forbehold for eventuelle fejl og mangler der måtte være. 
 
+### Overview of Different Types of Big O Complexities
+
+Big O notation is used to describe the performance or complexity of an algorithm. It provides an upper bound on the time or space requirements in terms of the size of the input. Here are common Big O complexities, along with examples in C/C++:
+
+### Constant Time: O(1)
+- **Description:** The algorithm takes a constant amount of time regardless of the input size.
+- **Example:** Accessing an array element by index.
+
+```cpp
+int getElement(int arr[], int index) {
+    return arr[index]; // O(1)
+}
+```
+
+### Logarithmic Time: O(log n)
+- **Description:** The algorithm's time complexity grows logarithmically with the input size. Common in divide-and-conquer algorithms.
+- **Example:** Binary search.
+
+```cpp
+int binarySearch(int arr[], int size, int target) {
+    int left = 0, right = size - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) return mid; // O(log n)
+        if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+```
+
+### Linear Time: O(n)
+- **Description:** The algorithm's time complexity grows linearly with the input size.
+- **Example:** Linear search.
+
+```cpp
+int linearSearch(int arr[], int size, int target) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == target) return i; // O(n)
+    }
+    return -1;
+}
+```
+
+### Linearithmic Time: O(n log n)
+- **Description:** The algorithm's time complexity grows at a rate of \(n \log n\). Common in efficient sorting algorithms.
+- **Example:** Merge sort.
+
+```cpp
+void merge(int arr[], int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    int* L = new int[n1];
+    int* R = new int[n2];
+    for (int i = 0; i < n1; i++) L[i] = arr[left + i];
+    for (int i = 0; i < n2; i++) R[i] = arr[mid + 1 + i];
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) arr[k++] = L[i++];
+        else arr[k++] = R[j++];
+    }
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
+    delete[] L;
+    delete[] R;
+}
+
+void mergeSort(int arr[], int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
+}
+```
+
+### Quadratic Time: O(n^2)
+- **Description:** The algorithm's time complexity grows quadratically with the input size. Common in algorithms with nested loops.
+- **Example:** Bubble sort.
+
+```cpp
+void bubbleSort(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {         // Outer loop: O(n)
+        for (int j = 0; j < size - i - 1; j++) { // Inner loop: O(n)
+            if (arr[j] > arr[j + 1]) {
+                std::swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+}
+```
+
+### Cubic Time: O(n^3)
+- **Description:** The algorithm's time complexity grows cubically with the input size. Common in algorithms with three nested loops.
+- **Example:** Checking all triplets in an array.
+
+```cpp
+void checkTriplets(int arr[], int size) {
+    for (int i = 0; i < size; i++) {           // Outer loop: O(n)
+        for (int j = i + 1; j < size; j++) {   // Middle loop: O(n)
+            for (int k = j + 1; k < size; k++) { // Inner loop: O(n)
+                if (arr[i] + arr[j] + arr[k] == 0) {
+                    std::cout << "Triplet found: " << arr[i] << ", " << arr[j] << ", " << arr[k] << std::endl;
+                }
+            }
+        }
+    }
+}
+```
+
+### Exponential Time: O(2^n)
+- **Description:** The algorithm's time complexity doubles with each additional input element. Common in recursive algorithms solving combinatorial problems.
+- **Example:** Recursive calculation of Fibonacci numbers.
+
+```cpp
+int fibonacci(int n) {
+    if (n <= 1) return n; // Base cases
+    return fibonacci(n - 1) + fibonacci(n - 2); // O(2^n)
+}
+```
+
+### Factorial Time: O(n!)
+- **Description:** The algorithm's time complexity grows factorially with the input size. Common in algorithms generating permutations.
+- **Example:** Generating all permutations of a string.
+
+```cpp
+void permute(std::string str, int left, int right) {
+    if (left == right) std::cout << str << std::endl; // Base case
+    else {
+        for (int i = left; i <= right; i++) {
+            std::swap(str[left], str[i]);
+            permute(str, left + 1, right); // O(n!)
+            std::swap(str[left], str[i]);  // Backtrack
+        }
+    }
+}
+
+void generatePermutations(std::string str) {
+    permute(str, 0, str.length() - 1);
+}
+```
+
+### Examples with Dependent Inner Loops
+- **Quadratic Time (Dependent Inner Loop):**
+  - Example: Printing pairs of elements.
+
+```cpp
+void printPairs(int arr[], int size) {
+    for (int i = 0; i < size; i++) {            // Outer loop: O(n)
+        for (int j = i + 1; j < size; j++) {    // Inner loop depends on i: O(n)
+            std::cout << "(" << arr[i] << ", " << arr[j] << ")" << std::endl;
+        }
+    }
+}
+```
+
+- **Cubic Time (Dependent Inner Loop):**
+  - Example: Printing triplets of elements.
+
+```cpp
+void printTriplets(int arr[], int size) {
+    for (int i = 0; i < size; i++) {            // Outer loop: O(n)
+        for (int j = i + 1; j < size; j++) {    // Middle loop depends on i: O(n)
+            for (int k = j + 1; k < size; k++) { // Inner loop depends on j: O(n)
+                std::cout << "(" << arr[i] << ", " << arr[j] << ", " << arr[k] << ")" << std::endl;
+            }
+        }
+    }
+}
+```
+
+### Summary
+
+- **Constant Time (O(1)):** Time complexity does not change with input size. Example: Accessing an array element.
+- **Logarithmic Time (O(log n)):** Time complexity grows logarithmically. Example: Binary search.
+- **Linear Time (O(n)):** Time complexity grows linearly. Example: Linear search.
+- **Linearithmic Time (O(n log n)):** Time complexity grows at a rate of \(n \log n\). Example: Merge sort.
+- **Quadratic Time (O(n^2)):** Time complexity grows quadratically. Example: Bubble sort.
+- **Cubic Time (O(n^3)):** Time complexity grows cubically. Example: Triplet checking.
+- **Exponential Time (O(2^n)):** Time complexity doubles with each additional input element. Example: Fibonacci sequence.
+- **Factorial Time (O(n!)):** Time complexity grows factorially. Example: Generating permutations.
+
 ## DATA TYPES
 
 ### 1. Linked Lists
