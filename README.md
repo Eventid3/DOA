@@ -152,30 +152,59 @@ void generatePermutations(std::string str) {
 - **Quadratic Time (Dependent Inner Loop):**
   - Example: Printing pairs of elements.
 
+Certainly! Let's perform a detailed Big O analysis of the provided code:
+
 ```cpp
 void printPairs(int arr[], int size) {
     for (int i = 0; i < size; i++) {            // Outer loop: O(n)
-        for (int j = i + 1; j < size; j++) {    // Inner loop depends on i: O(n)
+        for (int j = i + 1; j < size; j++) {    // Inner loop depends on i: O(n - i - 1)
             std::cout << "(" << arr[i] << ", " << arr[j] << ")" << std::endl;
         }
     }
 }
 ```
 
-- **Cubic Time (Dependent Inner Loop):**
-  - Example: Printing triplets of elements.
+1. **Outer Loop:**
+   - The outer loop runs from `i = 0` to `i < size`.
+   - This means the outer loop executes `size` times.
+   - **Time Complexity of Outer Loop:** \(O(n)\)
 
-```cpp
-void printTriplets(int arr[], int size) {
-    for (int i = 0; i < size; i++) {            // Outer loop: O(n)
-        for (int j = i + 1; j < size; j++) {    // Middle loop depends on i: O(n)
-            for (int k = j + 1; k < size; k++) { // Inner loop depends on j: O(n)
-                std::cout << "(" << arr[i] << ", " << arr[j] << ", " << arr[k] << ")" << std::endl;
-            }
-        }
-    }
-}
-```
+2. **Inner Loop:**
+   - The inner loop runs from `j = i + 1` to `j < size`.
+   - For each value of `i`, the inner loop executes `size - (i + 1)` times.
+   - When `i = 0`, the inner loop runs `n - 1` times.
+   - When `i = 1`, the inner loop runs `n - 2` times.
+   - This pattern continues until `i = n - 1`, where the inner loop runs `0` times.
+   - **Time Complexity of Inner Loop for each `i`:** \(O(n - i - 1)\)
+
+3. **Total Time Complexity:**
+   - To find the total time complexity, we sum the number of iterations of the inner loop for all values of `i`.
+   - Total iterations:
+     \[
+     (n - 1) + (n - 2) + (n - 3) + \cdots + 2 + 1 + 0
+     \]
+   - This is an arithmetic series sum of the first `n` numbers minus the first element (which is `n`).
+   - The sum of the first `n` natural numbers is:
+     \[
+     \frac{(n)(n - 1)}{2}
+     \]
+   - Simplifying this sum gives:
+     \[
+     \frac{n^2 - n}{2}
+     \]
+   - Therefore, the total time complexity is \(O(n^2)\).
+
+#### Summary:
+
+- **Outer Loop:** \(O(n)\)
+- **Inner Loop:** The inner loop runs approximately \(\frac{n^2 - n}{2}\) times in total.
+- **Total Time Complexity:** \(O(n^2)\)
+
+#### Space Complexity:
+
+- The space complexity is \(O(1)\) since the algorithm uses a constant amount of extra space, regardless of the input size.
+
+**Conclusion:** The provided code has a time complexity of \(O(n^2)\) and a space complexity of \(O(1)\). This quadratic time complexity is due to the nested loops, where the inner loop depends on the index of the outer loop.
 
 ### Summary
 
